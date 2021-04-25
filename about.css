@@ -1,0 +1,85 @@
+.content-about{
+    position: relative;
+    width: 100%;
+    min-height: calc(0.75 * 100vh);
+    background-color: #E0E1DC;
+}
+.narvi-bar{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    top: 30px;
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    
+}
+.nb{
+    position: relative;
+    width: calc(var(--mbwidth) * 0.6 * 90vw);
+    height: calc(var(--mbheight) * 0.6 * 90vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+    background-color: #a5a4a4;
+    color: white;
+    border-radius: 5px;
+}
+.nb:hover{
+    cursor: pointer;
+    background-color: #5F5C5C;
+}
+.active{
+    background-color: #5F5C5C;
+}
+
+.about-content{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+.about-img{
+    position: relative;
+    margin-bottom: 3%;
+    background-image: url(image/auto.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: calc(var(--autoimgheight) * 0.8 * 100vh);
+    height: calc(var(--autoimgheight) * 0.8 * 100vh);
+}
+.about-text{
+    position: relative;
+    width: calc(var(--autoimgheight) * 110vh);
+    height: calc(var(--autoimgheight) * 0.55 * 100vh);
+    /* background-color: aqua; */
+    margin-bottom: 3%;
+    font-size: 2.5vw;
+}
+@media (min-width: 576px){
+    .about-text{
+        position: relative;
+        width: calc(var(--autoimgheight) * 2 * 100vw);
+        height: calc(var(--autoimgheight) * 0.8 * 100vw);
+        /* background-color: aqua; */
+        margin-bottom: 3%;
+    }
+}
+@media (min-width: 992px){
+    .about-content{
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 7%;
+    }
+    .about-text{
+        position: relative;
+        width: calc(var(--autoimgheight) * 100wv);
+        height: calc(var(--autoimgheight)  * 90vh);
+        /* background-color: aqua; */
+        margin-bottom: 3%;
+        font-size: 1.8vw;
+        align-items: center;
+        padding-top: 20px;
+    }
+}

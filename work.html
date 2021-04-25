@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+  <!-- main.css -->
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="work.css">
+
+  <title>Auto Animator - Work</title>
+  <link rel="icon" href="image/porticon.png" type="image/x-icon">
+</head>
+
+<body onresize="checkSize()">
+  <div class="headerbar">
+    <div class="logo-header imgbg" onclick="location.href='index.html'"></div>
+  </div>
+
+  <div class="content-work">
+
+
+    <div class="narvi-bar">
+      <div class="nb s-nbabout" onclick="location.href='about.html'">About</div>
+      <div class="nb s-nbwork active">Work</div>
+      <div class="nb s-nbresume" onclick="location.href='resume.html'">Resume</div>
+    </div>
+  </div>
+
+  <div class="about-work">
+
+    <div class="slide-show">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <div id="D1" class="carousel-item active">
+            <img id="imgD1" src="image/work1_01.png" class="imgshow" alt="...">
+          </div>
+          <div id="D2" class="carousel-item ">
+            <img id="imgD2" src="image/work1_02.png" class="imgshow" alt="...">
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="pool-work">
+      <div id="work1" class="work-box" onclick="change(0)"></div>
+      <div id="work2" class="work-box" onclick="change(1)"></div>
+      <div id="work3" class="work-box" onclick="change(2)"></div>
+      <div id="work4" class="work-box" onclick="change(3)"></div>
+      <div id="work5" class="work-box" onclick="change(4)"></div>
+      <div id="work6" class="work-box"></div>
+      <div id="prevbtn" class="prev-workbtn carousel-control-prev-icon" onclick="workChange(-1)"></div>
+      <div id="nextbtn" class="next-workbtn carousel-control-next-icon" onclick="workChange(1)"></div>
+    </div>
+
+  </div>
+
+  <div class="footerbar">
+    <div class="logo-footer imgbg"></div>
+    <div class="logo-face imgbg" onclick="window.open('https://www.facebook.com/rome.initary')"></div>
+    <div class="logo-youtube imgbg" onclick="window.open('https://www.youtube.com/channel/UChjo4lephAGMRSZ7BWFfbVQ')">
+    </div>
+  </div>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    let getInnerPool = document.querySelector('.carousel-inner');
+    let checkWork1 = 0;
+    let checkWork3 = 0;
+    let checkWork4 = 0;
+    let checkWork5 = 0;
+
+    function removeDiv() {
+      if (checkWork3 == 1) {
+        document.getElementById('D3').remove();
+        document.getElementById('D4').remove();
+        checkWork3 = 0;
+      } else if (checkWork4 == 1) {
+        document.getElementById('D3').remove();
+        document.getElementById('D4').remove();
+        checkWork4 = 0;
+      } else if (checkWork5 == 1) {
+        document.getElementById('D3').remove();
+        document.getElementById('D4').remove();
+        document.getElementById('D5').remove();
+        document.getElementById('D6').remove();
+        checkWork5 = 0;
+      }
+
+      let setActive1 = document.getElementById('D1');
+      let setActive2 = document.getElementById('D2');
+
+      setActive2.classList.remove("active");
+      setActive1.classList.add("active");
+    }
+
+    function change(num) {
+
+      document.getElementById('work1').style.border = '';
+      document.getElementById('work1').style.opacity = '.75';
+      document.getElementById('work2').style.border = '';
+      document.getElementById('work2').style.opacity = '.75';
+      document.getElementById('work3').style.border = '';
+      document.getElementById('work3').style.opacity = '.75';
+      document.getElementById('work4').style.border = '';
+      document.getElementById('work4').style.opacity = '.75';
+      document.getElementById('work5').style.border = '';
+      document.getElementById('work5').style.opacity = '.75';
+
+      switch (num) {
+
+        case 0:
+          document.getElementById('imgD1').src = 'image/work1_01.png';
+          document.getElementById('imgD2').src = 'image/work1_02.png';
+
+          document.getElementById('work1').style.border = '4px solid black';
+          document.getElementById('work1').style.opacity = '1';
+          removeDiv();
+
+          break;
+        case 1:
+          document.getElementById('imgD1').src = 'image/work2_01.png';
+          document.getElementById('imgD2').src = 'image/work2_02.png';
+
+          document.getElementById('work2').style.border = '4px solid black';
+          document.getElementById('work2').style.opacity = '1';
+          removeDiv();
+          
+          break;
+        case 2:
+          document.getElementById('imgD1').src = 'image/work3_01.png';
+          document.getElementById('imgD2').src = 'image/work3_02.png';
+
+          document.getElementById('work3').style.border = '4px solid black';
+          document.getElementById('work3').style.opacity = '1';
+          removeDiv();
+
+          if (checkWork3 == 0) {
+            let img1 = document.createElement('img');
+            let myDiv1 = document.createElement("div");
+
+            myDiv1.id = 'D3';
+            img1.id = 'imgD3';
+            img1.src = 'image/work3_03.png';
+            img1.classList.add("imgshow");
+            myDiv1.classList.add("carousel-item");
+
+            myDiv1.appendChild(img1);
+            getInnerPool.appendChild(myDiv1);
+
+            let img2 = document.createElement('img');
+            let myDiv2 = document.createElement("div");
+
+            myDiv2.id = 'D4';
+            img2.id = 'imgD4';
+            img2.src = 'image/work3_04.png';
+            img2.classList.add("imgshow");
+            myDiv2.classList.add("carousel-item");
+
+            myDiv2.appendChild(img2);
+            getInnerPool.appendChild(myDiv2);
+
+            checkWork3 = 1;
+          }
+
+          break;
+        case 3:
+          document.getElementById('imgD1').src = 'image/work4_01.png';
+          document.getElementById('imgD2').src = 'image/work4_02.png';
+
+          document.getElementById('work4').style.border = '4px solid black';
+          document.getElementById('work4').style.opacity = '1';
+          removeDiv();
+          if (checkWork4 == 0) {
+            let img3 = document.createElement('img');
+            let myDiv3 = document.createElement("div");
+
+            myDiv3.id = 'D3';
+            img3.id = 'imgD3';
+            img3.src = 'image/work4_03.png';
+            img3.classList.add("imgshow");
+            myDiv3.classList.add("carousel-item");
+
+            myDiv3.appendChild(img3);
+            getInnerPool.appendChild(myDiv3);
+
+            let img8 = document.createElement('img');
+            let myDiv8 = document.createElement("div");
+
+            myDiv8.id = 'D4';
+            img8.id = 'imgD4';
+            img8.src = 'image/work4_04.png';
+            img8.classList.add("imgshow");
+            myDiv8.classList.add("carousel-item");
+
+            myDiv8.appendChild(img8);
+            getInnerPool.appendChild(myDiv8);
+
+            checkWork4 = 1;
+          }
+
+          break;
+        case 4:
+          document.getElementById('imgD1').src = 'image/work5_01.png';
+          document.getElementById('imgD2').src = 'image/work5_02.png';
+
+          document.getElementById('work5').style.border = '4px solid black';
+          document.getElementById('work5').style.opacity = '1';
+          removeDiv();
+
+          if (checkWork5 == 0) {
+            let img4 = document.createElement('img');
+            let myDiv4 = document.createElement("div");
+            myDiv4.id = 'D3';
+            img4.id = 'imgD3';
+            img4.src = 'image/work5_03.png';
+            img4.classList.add("imgshow");
+            myDiv4.classList.add("carousel-item");
+            myDiv4.appendChild(img4);
+            getInnerPool.appendChild(myDiv4);
+
+            let img5 = document.createElement('img');
+            let myDiv5 = document.createElement("div");
+            myDiv5.id = 'D4';
+            img5.id = 'imgD4';
+            img5.src = 'image/work5_04.png';
+            img5.classList.add("imgshow");
+            myDiv5.classList.add("carousel-item");
+            myDiv5.appendChild(img5);
+            getInnerPool.appendChild(myDiv5);
+
+            let img6 = document.createElement('img');
+            let myDiv6 = document.createElement("div");
+            myDiv6.id = 'D5';
+            img6.id = 'imgD5';
+            img6.src = 'image/work5_05.png';
+            img6.classList.add("imgshow");
+            myDiv6.classList.add("carousel-item");
+            myDiv6.appendChild(img6);
+            getInnerPool.appendChild(myDiv6);
+
+            let img7 = document.createElement('img');
+            let myDiv7 = document.createElement("div");
+            myDiv7.id = 'D6';
+            img7.id = 'imgD6';
+            img7.src = 'image/work5_06.png';
+            img7.classList.add("imgshow");
+            myDiv7.classList.add("carousel-item");
+            myDiv7.appendChild(img7);
+            getInnerPool.appendChild(myDiv7);
+
+            checkWork5 = 1;
+          }
+
+          break;
+      }
+
+    }
+
+    let workOrder = 1;
+    document.getElementById('work1').style.border = '4px solid black';
+    document.getElementById('work1').style.opacity = '1';
+    
+    if (window.innerWidth < 992) {
+      document.getElementById('work6').style.display = 'none';
+    }
+
+    function checkSize() {
+      if (window.innerWidth < 576) {
+        document.getElementById('work1').style.display = 'block';
+        document.getElementById('work2').style.display = 'block';
+        document.getElementById('work3').style.display = 'none';
+        document.getElementById('work4').style.display = 'none';
+        document.getElementById('work5').style.display = 'none';
+        document.getElementById('work6').style.display = 'none';
+        workOrder = 1;
+        document.getElementById('prevbtn').style.display = 'none';
+        document.getElementById('nextbtn').style.display = 'block';
+      } else if (window.innerWidth >= 576 && window.innerWidth < 992) {
+        document.getElementById('work1').style.display = 'block';
+        document.getElementById('work2').style.display = 'block';
+        document.getElementById('work3').style.display = 'block';
+        document.getElementById('work4').style.display = 'none';
+        document.getElementById('work5').style.display = 'none';
+        document.getElementById('work6').style.display = 'none';
+        workOrder = 1;
+        document.getElementById('prevbtn').style.display = 'none';
+        document.getElementById('nextbtn').style.display = 'block';
+      } else if (window.innerWidth > 992) {
+        document.getElementById('work1').style.display = 'block';
+        document.getElementById('work2').style.display = 'block';
+        document.getElementById('work3').style.display = 'block';
+        document.getElementById('work4').style.display = 'block';
+        document.getElementById('work5').style.display = 'block';
+        document.getElementById('work6').style.display = 'block';
+        workOrder = 1;
+        document.getElementById('prevbtn').style.display = 'none';
+        document.getElementById('nextbtn').style.display = 'none';
+
+      }
+    }
+
+    function workChange(number) {
+      workOrder += number;
+
+
+      if (workOrder == 4) {
+        document.getElementById('nextbtn').style.display = 'none';
+      } else {
+        document.getElementById('nextbtn').style.display = 'block';
+      }
+      if (workOrder == 1) {
+        document.getElementById('prevbtn').style.display = 'none';
+      } else {
+        document.getElementById('prevbtn').style.display = 'block';
+      }
+
+      if (workOrder == 1 && window.innerWidth < 576) {
+        document.getElementById('work1').style.display = 'block';
+        document.getElementById('work2').style.display = 'block';
+        document.getElementById('work3').style.display = 'none';
+        document.getElementById('work4').style.display = 'none';
+        document.getElementById('work5').style.display = 'none';
+
+      } else if (workOrder == 1 && window.innerWidth > 576) {
+        document.getElementById('work1').style.display = 'block';
+        document.getElementById('work2').style.display = 'block';
+        document.getElementById('work3').style.display = 'block';
+        document.getElementById('work4').style.display = 'none';
+        document.getElementById('work5').style.display = 'none';
+      }
+
+      if (workOrder == 2 && window.innerWidth < 576) {
+        document.getElementById('work1').style.display = 'none';
+        document.getElementById('work3').style.display = 'block';
+        document.getElementById('work2').style.display = 'block';
+        document.getElementById('work4').style.display = 'none';
+
+      } else if (workOrder == 2 && window.innerWidth > 576) {
+        document.getElementById('work1').style.display = 'none';
+        document.getElementById('work2').style.display = 'block';
+        document.getElementById('work3').style.display = 'block';
+        document.getElementById('work4').style.display = 'block';
+        document.getElementById('work5').style.display = 'none';
+      }
+
+      if (workOrder == 3 && window.innerWidth < 576) {
+        document.getElementById('work2').style.display = 'none';
+        document.getElementById('work4').style.display = 'block';
+        document.getElementById('work3').style.display = 'block';
+        document.getElementById('work5').style.display = 'none';
+
+      } else if (workOrder == 3 && window.innerWidth > 576) {
+        document.getElementById('work1').style.display = 'none';
+        document.getElementById('work2').style.display = 'none';
+        document.getElementById('work3').style.display = 'block';
+        document.getElementById('work4').style.display = 'block';
+        document.getElementById('work5').style.display = 'block';
+        document.getElementById('nextbtn').style.display = 'none';
+      }
+
+      if (workOrder == 4 && window.innerWidth < 576) {
+        document.getElementById('work3').style.display = 'none';
+        document.getElementById('work5').style.display = 'block';
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>

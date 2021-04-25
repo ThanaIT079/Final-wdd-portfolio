@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+
+:root{
+    /* => value / 1080 => * 100vh */
+    --logoheight: 0.1111111111111111; 
+    --logowidth: 0.462962962962963;
+
+    --logofaceheight: 0.0759259259259259;
+
+    --toolbarwidth: 0.5185185185185185;
+    --toolbarheight: 0.1111111111111111;
+
+    --autoimgheight: 0.462962962962963;
+
+    --mbwidth: 0.3020833333333333;
+    --mbheight: 0.1175925925925926;
+    
+}
+
+body{
+    font-family: 'Mitr', sans-serif;
+    background-color: #E0E1DC;
+}
+p{
+    margin: 0;
+}
+/* a{
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    color: white;
+  } */
+/* CSS for width < 576 px - Start */
+/* CSS for width < 576 px - End */
+.headerbar{
+    position: relative;
+    width: 100%;
+    height: calc(0.13 * 100vh);
+    background-color: #111111;
+    opacity: 75%;
+}
+.content-index{
+    position: relative;
+    width: 100%;
+    height: calc(0.75 * 100vh);
+    background-color: #E0E1DC;
+}
+.footerbar{
+    position: relative;
+    width: 100%;
+    height: calc(0.12 * 100vh);
+    background-color: #111111;
+}
+.imgbg{
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.logo-header{
+    background-image: url(image/port-logo.png);
+    width: calc(var(--logowidth) * 0.8 * 100vh);
+    height: calc(var(--logoheight) * 0.8 * 100vh);
+    position: relative;
+}
+
+.logo-header:hover, .logo-face:hover, .logo-youtube:hover{
+    cursor: pointer;
+}
+
+.logo-footer{
+    background-image: url(image/port-logo.png);
+    width: calc(var(--logowidth) * 0.4 * 100vh);
+    height: calc(var(--logoheight) * 0.4 * 100vh);
+    position: absolute;
+}
+
+.logo-face{
+    background-image: url(image/logo-face.png);
+    width: calc(var(--logofaceheight) * 0.4 * 100vh);
+    height: calc(var(--logofaceheight) * 0.4 * 100vh);
+    position: absolute;
+    border-radius: 15px;
+    right: 25vw;
+}
+.logo-youtube{
+    background-image: url(image/logo-yt.png);
+    width: calc(var(--logofaceheight) * 0.4 * 100vh);
+    height: calc(var(--logofaceheight) * 0.4 * 100vh);
+    position: absolute;
+    border-radius: 15px;
+    right: 10vw;
+}
+
+.logo-bar{
+    position: relative;
+    background-image: url(image/logopack.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: calc(var(--toolbarwidth) * 0.6 * 100vh);
+    height: calc(var(--toolbarheight) * 0.6 * 100vh);
+    left: 5%;
+    top: 4%;
+}
+
+.autoimg{
+    position: absolute;
+    background-image: url(image/auto.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: calc(var(--autoimgheight) * 0.8 * 100vh);
+    height: calc(var(--autoimgheight) * 0.8 * 100vh);
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mb:hover{
+    cursor: pointer;
+    border-radius: 45px;
+}
+.mb:active{
+    opacity: 0.75;
+}
+
+.mainbtn{
+    display: flex;
+    margin-left: 20px;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+}
+.mb{
+    width: calc(var(--mbwidth) * 0.6 * 100vw);
+    height: calc(var(--mbheight) * 0.6 * 100vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5vw;
+    /* padding-left: 20px; */
+    background-color: #5F5C5C;
+    color: white;
+    margin-right: 20px;
+    border-radius: 15px;
+}
+.work{
+    transform: translateY(-20px);
+}
+.resume{
+    transform: translateY(-50px);
+}
+
+/* CSS for width 576 - 991 px - Start */
+/* CSS for width 576 - 991 px - End */
+@media (min-width: 576px) { 
+    /* .headerbar{
+        background-color: green;
+    } */
+    .logo-footer{
+        background-image: url(image/port-logo.png);
+        position: relative;
+        width: calc(var(--logowidth) * 0.6 * 100vh);
+        height: calc(var(--logoheight) * 0.6 * 100vh);
+        
+    }
+    .logo-face{
+        background-image: url(image/logo-face.png);
+        width: calc(var(--logofaceheight) * 0.6 * 100vh);
+        height: calc(var(--logofaceheight) * 0.6 * 100vh);
+        position: absolute;
+        border-radius: 15px;
+        right: 25vw;
+    }
+    .logo-youtube{
+        background-image: url(image/logo-yt.png);
+        width: calc(var(--logofaceheight) * 0.6 * 100vh);
+        height: calc(var(--logofaceheight) * 0.6 * 100vh);
+        position: absolute;
+        border-radius: 15px;
+        right: 10vw;
+    } 
+
+    .logo-bar{
+        position: relative;
+        background-image: url(image/logopack.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: calc(var(--toolbarwidth) * 0.8 * 100vh);
+        height: calc(var(--toolbarheight) * 0.8 * 100vh);
+        left: 5%;
+        top: 4%;
+    }
+    .mb{
+        width: calc(var(--mbwidth) * 0.8 * 100vw);
+        height: calc(var(--mbheight) * 0.8 * 100vh);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4.5vw;
+        /* padding-left: 20px; */
+        background-color: #5F5C5C;
+        color: white;
+        margin-right: 20px;
+        border-radius: 15px;
+    }
+    .work{
+        transform: translateY(-40px);
+    }
+    .resume{
+        transform: translateY(-80px);
+    }
+}
+
+/* CSS for width > 992 px - Start */
+/* CSS for width > 992 px - End */
+@media (min-width: 992px) { 
+    /* .headerbar{
+        background-color: blue;
+    } */
+    .logo-footer{
+        background-image: url(image/port-logo.png);
+        position: relative;
+        width: calc(var(--logowidth) * 0.8 * 100vh);
+        height: calc(var(--logoheight) * 0.8 * 100vh);
+    }
+    .logo-face{
+        background-image: url(image/logo-face.png);
+        width: calc(var(--logofaceheight) * 0.8 * 100vh);
+        height: calc(var(--logofaceheight) * 0.8 * 100vh);
+        position: absolute;
+        border-radius: 15px;
+        right: 25vw;
+    }
+    .logo-youtube{
+        background-image: url(image/logo-yt.png);
+        width: calc(var(--logofaceheight) * 0.8 * 100vh);
+        height: calc(var(--logofaceheight) * 0.8 * 100vh);
+        position: absolute;
+        border-radius: 15px;
+        right: 10vw;
+    }
+    .logo-bar{
+        position: relative;
+        background-image: url(image/logopack.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: calc(var(--toolbarwidth) * 100vh);
+        height: calc(var(--toolbarheight) * 100vh);
+        left: 5%;
+        top: 4%;
+    }
+
+    .autoimg{
+        position: absolute;
+        background-image: url(image/auto.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: calc(var(--autoimgheight) * 100vh);
+        height: calc(var(--autoimgheight) * 100vh);
+        top: 60%;
+        transform: translateY(-55%);
+        left: 8vw;
+    }
+    .mainbtn{
+        display: block;
+        position: absolute;
+        margin-left: 0px;
+        width: calc(var(--mbwidth) * 100vw);
+        height: calc(var(--autoimgheight) * 100vh);
+        top: 60%;
+        transform: translate(50%, -55%);
+        right: 8vw;
+    }
+    .mb{
+        position: relative;
+        width: calc(var(--mbwidth) * 100vw);
+        height: calc(var(--mbheight) * 100vh);
+        margin-bottom: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4.5vw;
+        /* padding-left: 20px; */
+        margin-right: 0px;
+        background-color: #5F5C5C;
+        color: white;
+        transition: .2s;
+        border-radius: 15px;
+    }
+    .work{
+        transform: translateY(0px);
+    }
+    .resume{
+        transform: translateY(0px);
+    }
+
+}
