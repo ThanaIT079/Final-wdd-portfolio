@@ -94,6 +94,7 @@
     let checkWork4 = 0;
     let checkWork5 = 0;
 
+    // ลบ DIV ที่ถูกสร้างใน slideshow
     function removeDiv() {
       if (checkWork3 == 1) {
         document.getElementById('D3').remove();
@@ -118,6 +119,7 @@
       setActive1.classList.add("active");
     }
 
+    // เปลี่ยนชุดภาพของ slideshow ไปตามงานที่ถูกเลือกไว้  | เรียกใช้ removeDiv() ก่อนทำการสร้าง DIV เเละ img ใหม่
     function change(num) {
 
       document.getElementById('work1').style.border = '';
@@ -281,14 +283,17 @@
 
     }
 
+    // กำหนดค่าเริ่มต้นให้ เเสดงผลของงานที่ 1 
     let workOrder = 1;
     document.getElementById('work1').style.border = '4px solid black';
     document.getElementById('work1').style.opacity = '1';
     
+    // เช็คความกว้างของเว็บ เพื่อปิดการแสดงผลของ div บางตัว
     if (window.innerWidth < 992) {
       document.getElementById('work6').style.display = 'none';
     }
 
+    // เช็คความกว้างของหน้าจอ ขณะมีการเปลี่ยนแปลงขนาดของเว็บไซต์
     function checkSize() {
       if (window.innerWidth < 576) {
         document.getElementById('work1').style.display = 'block';
@@ -324,6 +329,7 @@
       }
     }
 
+    //  การเเสดงผลของ slideshow ของงานทั้งหมด ในขนาด เล็ก เเละ กลาง
     function workChange(number) {
       workOrder += number;
 
